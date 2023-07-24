@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230724 18:07:17.934" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="C:\Users\monsh\PycharmProjects\gitlab\occazio_automation_app\Tests">
+<suite id="s1-s1" name="occazioScripts" source="C:\Users\monsh\PycharmProjects\gitlab\occazio_automation_app\Tests\occazioScripts.robot">
+<test id="s1-s1-t1" name="Onboarding" line="6">
+<kw name="Run Keyword If" library="BuiltIn" type="SETUP">
+<arg>'${env}'=='LOCAL'</arg>
+<arg>Launch App</arg>
+<arg>ELSE IF</arg>
+<arg>'${env}'=='BROWSERSTACK'</arg>
+<arg>Launch App Browserstack</arg>
+<arg>ELSE IF</arg>
+<arg>'${env}'=='BROWSERSTACK_PARALLEL'</arg>
+<arg>Launch App Browserstack In Parallel</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Launch TestSetup Failed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Launch App" library="base">
+<doc>Lancer App en Local</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${Hub}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>app=${ANDROID_APP}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20230724 18:07:18.195" endtime="20230724 18:07:31.423"/>
+</kw>
+<status status="PASS" starttime="20230724 18:07:18.195" endtime="20230724 18:07:31.423"/>
+</kw>
+<status status="PASS" starttime="20230724 18:07:18.195" endtime="20230724 18:07:31.423"/>
+</kw>
+<kw name="Onboarding" library="navigate">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${id_btn_demarrer}</arg>
+<arg>15s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230724 18:07:34.419" level="INFO">criteria is bt_start_showcase
+criteria is bt_start_showcase
+criteria is bt_start_showcase
+criteria is bt_start_showcase
+criteria is bt_start_showcase</msg>
+<status status="PASS" starttime="20230724 18:07:31.425" endtime="20230724 18:07:34.419"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${id_btn_demarrer}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230724 18:07:34.425" level="INFO">Clicking element 'id=bt_start_showcase'.</msg>
+<msg timestamp="20230724 18:07:34.587" level="INFO">criteria is bt_start_showcase</msg>
+<status status="PASS" starttime="20230724 18:07:34.419" endtime="20230724 18:07:34.587"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${id_indicator_swipe}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230724 18:07:35.408" level="INFO">criteria is indicator_showcase</msg>
+<status status="PASS" starttime="20230724 18:07:34.588" endtime="20230724 18:07:35.408"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${buttons}</var>
+<arg>Page Should Not Contain Element</arg>
+<arg>${id_btn_valider}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Not Contain Element" library="AppiumLibrary">
+<arg>${id_btn_valider}</arg>
+<doc>Verifies that current page not contains `locator` element.</doc>
+<msg timestamp="20230724 18:07:35.466" level="INFO">Current page not contains element 'id=bt_stop_showcase'.</msg>
+<msg timestamp="20230724 18:07:35.466" level="INFO">criteria is bt_stop_showcase</msg>
+<status status="PASS" starttime="20230724 18:07:35.409" endtime="20230724 18:07:35.466"/>
+</kw>
+<msg timestamp="20230724 18:07:35.466" level="INFO">${buttons} = True</msg>
+<status status="PASS" starttime="20230724 18:07:35.409" endtime="20230724 18:07:35.468"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>4</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${buttons}</arg>
+<arg>Swipe By Percent</arg>
+<arg>90</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+<arg>200</arg>
+<arg>ELSE</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+<arg>200</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230724 18:07:35.468" endtime="20230724 18:07:36.152"/>
+</kw>
+<status status="PASS" starttime="20230724 18:07:35.468" endtime="20230724 18:07:36.152"/>
+</kw>
+<status status="PASS" starttime="20230724 18:07:35.468" endtime="20230724 18:07:36.152"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${buttons}</arg>
+<arg>Swipe By Percent</arg>
+<arg>90</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+<arg>200</arg>
+<arg>ELSE</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+<arg>200</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230724 18:07:36.153" endtime="20230724 18:07:37.035"/>
+</kw>
+<status status="PASS" starttime="20230724 18:07:36.153" endtime="20230724 18:07:37.035"/>
+</kw>
+<status status="PASS" starttime="20230724 18:07:36.153" endtime="20230724 18:07:37.035"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${buttons}</arg>
+<arg>Swipe By Percent</arg>
+<arg>90</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+<arg>200</arg>
+<arg>ELSE</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+<arg>200</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230724 18:07:37.038" endtime="20230724 18:07:37.696"/>
+</kw>
+<status status="PASS" starttime="20230724 18:07:37.037" endtime="20230724 18:07:37.697"/>
+</kw>
+<status status="PASS" starttime="20230724 18:07:37.037" endtime="20230724 18:07:37.697"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${buttons}</arg>
+<arg>Swipe By Percent</arg>
+<arg>90</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+<arg>200</arg>
+<arg>ELSE</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+<arg>200</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230724 18:07:37.697" endtime="20230724 18:07:38.361"/>
+</kw>
+<status status="PASS" starttime="20230724 18:07:37.697" endtime="20230724 18:07:38.361"/>
+</kw>
+<status status="PASS" starttime="20230724 18:07:37.697" endtime="20230724 18:07:38.361"/>
+</iter>
+<status status="PASS" starttime="20230724 18:07:35.468" endtime="20230724 18:07:38.361"/>
+</for>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${id_btn_allow_notif}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230724 18:07:38.363" level="INFO">Clicking element 'id=v_seekbar_overlay'.</msg>
+<msg timestamp="20230724 18:07:39.658" level="INFO">criteria is v_seekbar_overlay</msg>
+<status status="PASS" starttime="20230724 18:07:38.361" endtime="20230724 18:07:39.658"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${id_btn_valider}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230724 18:07:39.664" level="INFO">Clicking element 'id=bt_stop_showcase'.</msg>
+<msg timestamp="20230724 18:07:40.578" level="INFO">criteria is bt_stop_showcase</msg>
+<status status="PASS" starttime="20230724 18:07:39.659" endtime="20230724 18:07:40.578"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${popup_visible}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${id_popup_allow_notif_true}</arg>
+<arg>3</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${id_popup_allow_notif_true}</arg>
+<arg>3</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230724 18:07:41.953" level="INFO">criteria is com.android.permissioncontroller:id/permission_allow_button
+criteria is com.android.permissioncontroller:id/permission_allow_button</msg>
+<status status="PASS" starttime="20230724 18:07:40.578" endtime="20230724 18:07:41.954"/>
+</kw>
+<msg timestamp="20230724 18:07:41.954" level="INFO">${popup_visible} = True</msg>
+<status status="PASS" starttime="20230724 18:07:40.578" endtime="20230724 18:07:41.954"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${popup_visible}</arg>
+<arg>Click Element</arg>
+<arg>${id_popup_allow_notif_true}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${id_popup_allow_notif_true}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230724 18:07:41.956" level="INFO">Clicking element 'id=com.android.permissioncontroller:id/permission_allow_button'.</msg>
+<msg timestamp="20230724 18:07:42.053" level="INFO">criteria is com.android.permissioncontroller:id/permission_allow_button</msg>
+<status status="PASS" starttime="20230724 18:07:41.954" endtime="20230724 18:07:42.053"/>
+</kw>
+<status status="PASS" starttime="20230724 18:07:41.954" endtime="20230724 18:07:42.053"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${id_titre_popup}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230724 18:07:43.840" level="INFO">criteria is tv_why_user_title
+criteria is tv_why_user_title</msg>
+<status status="PASS" starttime="20230724 18:07:42.053" endtime="20230724 18:07:43.840"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${id_skip_popup}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230724 18:07:44.078" level="INFO">criteria is tv_why_skip</msg>
+<status status="PASS" starttime="20230724 18:07:43.840" endtime="20230724 18:07:44.078"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${id_skip_popup}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230724 18:07:44.081" level="INFO">Clicking element 'id=tv_why_skip'.</msg>
+<msg timestamp="20230724 18:07:44.382" level="INFO">criteria is tv_why_skip</msg>
+<status status="PASS" starttime="20230724 18:07:44.078" endtime="20230724 18:07:44.382"/>
+</kw>
+<status status="PASS" starttime="20230724 18:07:31.425" endtime="20230724 18:07:44.382"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20230724 18:07:44.383" endtime="20230724 18:07:45.492"/>
+</kw>
+<tag>test_001</tag>
+<status status="PASS" starttime="20230724 18:07:18.193" endtime="20230724 18:07:45.492"/>
+</test>
+<status status="PASS" starttime="20230724 18:07:18.178" endtime="20230724 18:07:45.493"/>
+</suite>
+<status status="PASS" starttime="20230724 18:07:17.935" endtime="20230724 18:07:45.494"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">test_001</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="occazioScripts">Tests.occazioScripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

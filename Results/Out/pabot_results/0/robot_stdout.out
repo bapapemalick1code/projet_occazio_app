@@ -1,0 +1,42 @@
+==============================================================================
+Tests                                                                         
+==============================================================================
+Tests.occazioScripts                                                          
+==============================================================================
+Onboarding                                                              
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\monsh\PycharmProjects\gitlab\occazio_automation_app\Tests\occazioScripts.robot:6
+    T:  Onboarding    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\monsh\PycharmProjects\gitlab\occazio_automation_app\Tests\occazioScripts.robot:9
+      Run Keyword If    '${env}'=='LOCAL'    Launch App    ELSE IF    '${env}'=='BROWSERSTACK'    Launch App Browserstack    ELSE IF    '${env}'=='BROWSERSTACK_PARALLEL'    Launch App Browserstack In Parallel    ELSE    Log    Launch TestSetup Failed
+      |  '${env}'=='LOCAL' = 'BROWSERSTACK_PARALLEL'=='LOCAL' (str)
+      |  '${env}'=='BROWSERSTACK' = 'BROWSERSTACK_PARALLEL'=='BROWSERSTACK' (str)
+      |  '${env}'=='BROWSERSTACK_PARALLEL' = 'BROWSERSTACK_PARALLEL'=='BROWSERSTACK_PARALLEL' (str)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\monsh\PycharmProjects\gitlab\occazio_automation_app\Tests\occazioScripts.robot:9
+      Launch App Browserstack In Parallel    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\monsh\PycharmProjects\gitlab\occazio_automation_app\Resources\Base\base.robot:45
+      Open Application    ${REMOTE_URL}    automationName=${ANDROID_AUTOMATION_NAME}    platformName=${ANDROID_PLATFORM_NAME}    deviceName=${bs_device}    app=${ANDROID_APP_BROWSERSTACK}    build=RobotFramework
+      |  ${REMOTE_URL} = http://papemalickba_a4GPus:8t3uuUtg8WV89rsT8Fxt@hub-cloud.browserstack.com/wd/hub (str)
+      |  automationName=${ANDROID_AUTOMATION_NAME} = automationName=UIAutomator2 (str)
+      |  platformName=${ANDROID_PLATFORM_NAME} = platformName=Android (str)
+      |  deviceName=${bs_device} = <Unable to define variable value>
+      |  app=${ANDROID_APP_BROWSERSTACK} = app=bs://1f2bcb75f30dd52d217d67dcc207b11635996200 (str)
+______________________________________________________________________________
+| FAIL |
+Setup failed:
+Variable '${bs_device}' not found.
+
+Also teardown failed:
+No application is open
+------------------------------------------------------------------------------
+Tests.occazioScripts                                                  | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests                                                                 | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\monsh\PycharmProjects\gitlab\occazio_automation_app\Results\Out\pabot_results\0\output.xml
