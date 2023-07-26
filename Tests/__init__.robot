@@ -6,6 +6,7 @@ Resource        ../Resources/Base/base.robot
 #Test Setup       Run Keyword          Launch App Browserstack
 #Test Setup       Run Keyword         Launch App
 
+
 Test Setup
 ...     Run Keyword If     '${env}'=='LOCAL'                     Launch App
 ...     ELSE IF            '${env}'=='BROWSERSTACK'              Launch App Browserstack

@@ -1,7 +1,7 @@
 *** Settings ***
 Resource        ../../Data/data.robot
-Resource    Component/Navigate/navigate.robot
-Resource    Component/Messagerie/messagerie.robot
+Resource    Component/navigate.robot
+Resource    Component/messagerie.robot
 Resource        ../Base/base.robot
 
 *** Keywords ***
